@@ -10,7 +10,7 @@
 
 This repository serves as a verifiable portfolio demonstrating proficiency in Large Language Models (LLMs), including transformer architectures, encoder-decoder models, attention mechanisms, and positional embeddings.
 
-Instead of a generic text classifier, this project probes the structural limits of foundational Transformer models by applying them to the extreme edge-case syntax of **Klingon (tlhIngan Hol)**. 
+**Crucially, Klingon is not utilized here for novelty.** Rather, its highly rigid Object-Verb-Subject (OVS) syntax and extreme agglutinative grammar provide a perfect programmatic test-bed to prove the core thesis of LLM learning: *Distributional Semantics*. This project demonstrates that LLMs do not inherently understand "meaning" via dictionaries, but rather map semantic relationships through high-dimensional geometric context. 
 
 ## Files Included
 
