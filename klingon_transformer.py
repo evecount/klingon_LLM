@@ -88,10 +88,47 @@ def run_attention_simulation():
     print("weight (0.90) to 'suvwI'' (Subject) at Position 2. Without Positional Embeddings, the model would fail")
     print("to differentiate the actor from the target.")
 
+# ==========================================
+# 3. DISTRIBUTIONAL SEMANTICS (CO-OCCURRENCE)
+# ==========================================
+def run_distributional_semantics_simulation():
+    print_header("3. Distributional Semantics (Relational Geometry)")
+    print("Demonstrating how meaning emerges purely from structural token co-occurrence.\n")
+    
+    # Target word: suvwI' (Warrior)
+    target = "suvwI' (Warrior)"
+    
+    # Mock co-occurrence frequencies in synthetic dataset
+    co_occurrences = {
+        "betleH (Bat'leth)": 0.85,
+        "may'Daq (Battle)": 0.78,
+        "jagh (Enemy)": 0.82,
+        "QongDaq (Bed)": 0.05,
+        "veng (City)": 0.12
+    }
+    
+    print(f"Target Token: {target}")
+    print("\nSimulated Geometric Distances (Cosine Similarity based on Co-occurrence):")
+    
+    # Sort by similarity
+    sorted_co = sorted(co_occurrences.items(), key=lambda x: x[1], reverse=True)
+    
+    for word, sim in sorted_co:
+        # Create a simple visual bar for the terminal
+        bar = "█" * int(sim * 20)
+        print(f"  {word:<20} | {sim:>4.2f} | {bar}")
+        
+    print("\nAnalysis:")
+    print(f"The LLM does not inherently know what a '{target}' is. However, because its")
+    print(f"embedding vector is mathematically pulled close to weapons and combat terms,")
+    print("and pushed far from terms like 'Bed' (0.05), the model successfully infers")
+    print("the semantic meaning of the token purely from relational geometry.")
+
 if __name__ == "__main__":
     print("\n============================================================")
     print("  KLINGON LLM ARCHITECTURE PROOF - ICT3507C DEMONSTRATION")
     print("============================================================")
     run_bpe_simulation()
     run_attention_simulation()
+    run_distributional_semantics_simulation()
     print("\nSimulation Complete.\n")
