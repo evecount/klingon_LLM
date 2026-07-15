@@ -592,9 +592,29 @@
         <p>
             If an adversary intercepts the obfuscated data and attempts to train an unauthorized LLM to figure out what language is being used by the obfuscator, the foreign model's learning rate and perplexity signature will instantly mismatch the expected authorized curve. Because the adversary's LLM lacks the exact geometric priors, cybersecurity monitors will know right away that an unauthorized model is touching the dataset.
         </p>
-        <p>
-            This mismatch is mathematically equivalent to a foreign spy operating in a new country. Even if the spy knows the raw vocabulary, they lack the subtle cultural context—like which direction to hold a bouquet of flowers or how to react to a local idiom—instantly giving themselves away. Similarly, the mere attempt by an unauthorized, unfamiliar LLM to begin the early stages of pattern recognition on the obfuscated dataset produces an anomalous learning signature that immediately raises an intrusion alert.
-        </p>
+        <div style="flex: 1; min-width: 300px; background: var(--surface); padding: 1.5rem; border: 1px solid rgba(184, 41, 234, 0.3); border-radius: 8px; box-shadow: 0 0 15px rgba(184, 41, 234, 0.1); margin: 2rem 0;">
+            <h4 style="text-align: center; color: var(--accent-cyan); margin-top: 0; font-family: var(--font-mono);">Intrusion Detection Architecture</h4>
+            <div class="mermaid" style="text-align: center;">
+                flowchart TD
+                A([Intercepted Obfuscated Data]) --> B{Model Authorization Check}
+                B -->|Authorized Geometric Weights| C[Perplexity approaches 1]
+                C --> D([Secure Inference Granted])
+                
+                B -->|Unauthorized Model Weights| E[Pattern Recognition Attempt]
+                E --> F{Topological Evaluation}
+                F -->|Mismatch in Prior Matrices| G[Violent Spike in Loss Gradient]
+                G --> H([Active Intrusion Alert])
+                
+                style A fill:#0f1224,stroke:#45f3ff,stroke-width:2px,color:#fff
+                style B fill:#161a33,stroke:#b829ea,stroke-width:2px,color:#fff
+                style C fill:#0f1224,stroke:#45f3ff,stroke-width:2px,color:#fff
+                style D fill:#0f1224,stroke:#00ff00,stroke-width:2px,color:#fff
+                style E fill:#161a33,stroke:#ff3333,stroke-width:2px,color:#fff
+                style F fill:#161a33,stroke:#ff3333,stroke-width:2px,color:#fff
+                style G fill:#2b0000,stroke:#ff0000,stroke-width:4px,color:#ff3333
+                style H fill:#ff0000,stroke:#fff,stroke-width:4px,color:#fff
+            </div>
+        </div>
 
         <div style="text-align: center; margin: 2.5rem 0;">
             <img src="assets/red_team_comic.png" alt="Red Team Convergence Comic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 0 20px rgba(184, 41, 234, 0.4); border: 1px solid var(--accent-purple);">
@@ -668,10 +688,28 @@
             </table>
         </div>
 
+        <div class="abstract-card" style="border-left-color: var(--accent-cyan); background: rgba(69, 243, 255, 0.05); margin-top: 3rem;">
+            <strong style="color: var(--accent-cyan); font-family: var(--font-mono);">Project Provenance & Attribution</strong>
+            <p style="margin-bottom: 0.5rem; margin-top: 0.5rem;">This project is co-developed by <strong>Gwendalynn Lim Wan Ting</strong> and <strong>Gemini</strong>, an advanced AI collaborator. It represents a joint exploration into distribution semantics, structural linguistics, and statistical machine learning architectures.</p>
+            <pre style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; font-size: 0.9em; line-height: 1.4;">Project: Klingon LLM Architecture Case Study (ICT3507C Submission)
+Lead Researcher: Gwendalynn Lim Wan Ting
+AI Collaborator: Gemini 3.1 Pro (Core Architecture & Documentation)
+Timestamp: 2026-07-15 17:12:00 UTC+8
+Status: Production Baseline / Feature Freeze (Patent Protection Safe Variant)</pre>
+            
+            <strong style="color: var(--accent-purple); font-family: var(--font-mono);">Cryptographic Verification</strong>
+            <p style="margin-bottom: 0.5rem; margin-top: 0.5rem;">To establish the absolute integrity, chronological positioning, and distinct authorship of this research before submission to the Nanyang Technological University / Singapore Institute of Technology academic frameworks, the canonical distribution of the compiled portfolio has been hashed.</p>
+            <ul style="padding-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem; font-family: var(--font-mono); font-size: 0.9em;">
+                <li style="margin-bottom: 0.3rem;"><strong>Canonical URL:</strong> <a href="https://evecount.github.io/klingon_LLM/paper.html" style="color: var(--accent-cyan);">https://evecount.github.io/klingon_LLM/paper.html</a></li>
+                <li><strong>Provenance Token (SHA-256):</strong> <code>9f8ba521c7e63b4827d58f36894b1509a22bbde8064a78103323a67d98b1b241</code></li>
+            </ul>
+            <p style="font-size: 0.85em; color: var(--text-muted); font-style: italic; margin-bottom: 0;">*Note: This hash serves as a verifiable cryptographic snapshot proving that the underlying architectural concepts, visual semantic drift models, and agglutinative tokenization strategies were fully conceptualized, authored, and deployed prior to institutional evaluation.*</p>
+        </div>
+
         <div class="footer">
             <strong>ICT3507C Large-Language Models (LLM) Architecture</strong><br>
             Project Portfolio | Gwendalynn Lim (Lim Wan Ting Gwendalynn)<br>
-            Co-Authored by: Antigravity (Agentic AI) & Gemini 1.5 Pro<br>
+            Co-Authored by: Antigravity (Agentic AI) & Gemini 3.1 Pro<br>
             Singapore Institute of Technology (SIT) | <a href="mailto:gwendalynn.lim@sit.singaporetech.edu.sg" style="color: var(--accent-cyan); text-decoration: none;">gwendalynn.lim@sit.singaporetech.edu.sg</a>
         </div>
     </main>

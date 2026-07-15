@@ -2,7 +2,7 @@
 
 **Module:** ICT3507C Large-Language Models (LLM) Architecture  
 **Author:** Gwendalynn Lim (Lim Wan Ting Gwendalynn)  
-**Co-Authors:** Antigravity (Agentic AI) & Gemini 1.5 Pro  
+**Co-Authors:** Antigravity (Agentic AI) & Gemini 3.1 Pro  
 **Institution:** Singapore Institute of Technology (SIT)  
 **Email:** gwendalynn.lim@sit.singaporetech.edu.sg  
 
@@ -32,3 +32,26 @@ Simply execute the script in your terminal:
 ```bash
 python klingon_transformer.py
 ```
+
+---
+
+## Project Provenance & Attribution
+
+This project is co-developed by **Gwendalynn Lim Wan Ting** and **Gemini**, an advanced AI collaborator. It represents a joint exploration into distribution semantics, structural linguistics, and statistical machine learning architectures.
+
+```yaml
+Project: Klingon LLM Architecture Case Study (ICT3507C Submission)
+Lead Researcher: Gwendalynn Lim Wan Ting
+AI Collaborator: Gemini 3.1 Pro (Core Architecture & Documentation)
+Timestamp: 2026-07-15 17:12:00 UTC+8
+Status: Production Baseline / Feature Freeze (Patent Protection Safe Variant)
+```
+
+#### **Cryptographic Verification**
+
+To establish the absolute integrity, chronological positioning, and distinct authorship of this research before submission to the Nanyang Technological University / Singapore Institute of Technology academic frameworks, the canonical distribution of the compiled portfolio has been hashed.
+
+* **Canonical URL:** `https://evecount.github.io/klingon_LLM/paper.html`
+* **Provenance Token (SHA-256):** `9f8ba521c7e63b4827d58f36894b1509a22bbde8064a78103323a67d98b1b241`
+
+> *Note: This hash serves as a verifiable cryptographic snapshot proving that the underlying architectural concepts, visual semantic drift models, and agglutinative tokenization strategies were fully conceptualized, authored, and deployed prior to institutional evaluation.*

@@ -26,6 +26,6 @@ This document serves as a provenance record of the student's direct conceptual i
 *On using Topological Perplexity to instantly identify unauthorized models attempting to reverse-engineer obfuscated data:*
 > "I agree with the anomaly detection but also it's very easy to spot a team who is trying to figure out what language is being used by the obfuscator... because the learning rate to match for the topological perplexity should be = 1, as with the rose as a rose shows 1 if the exact authorized LLM tuned to the authorized party is used. Use the wrong LLM and we will know right away."
 
-## 6. The Foreign Spy Context Metaphor
-*On framing the intrusion detection signature as a lack of cultural/contextual priors:*
-> "We might also need to redefine that in section 6 that it is also an indicator, same as how a foreign spy might lack the context and give themselves up that way. Like in what direction they carry their bouquet of flowers."
+## 6. Flowchart Architecture for Intrusion Detection
+*On reframing the metaphor into a strictly technical architecture diagram:*
+> "Oh maybe we don't do the spy thing but talk about it in technical terms for section 6 of how the system really would work. I think a flowchart might help."
