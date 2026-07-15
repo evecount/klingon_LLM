@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klingon LLM: A Structural Proof of Transformer Architectures</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --surface: #1e293b;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --font-mono: 'Fira Code', 'Courier New', monospace;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --border-color: #334155;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
+        h2 { font-size: 1.5rem; color: var(--accent); }
+        
+        .sidebar {
+            background-color: var(--surface);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-item {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--accent);
+        }
+
+        .main-content {
+            padding: 3rem 4rem;
+            max-width: 900px;
+        }
+
+        .abstract-card {
+            background: rgba(56, 189, 248, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+
+        .abstract-card strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+        }
+
+        code {
+            font-family: var(--font-mono);
+            background: #000000;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--accent-green);
+        }
+
+        pre {
+            background: #000000;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: #d1d5db;
+        }
+
+        .matrix-container {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+            font-family: var(--font-mono);
+        }
+
+        table.matrix {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.matrix th, table.matrix td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        table.matrix th {
+            background: #0f172a;
+            color: var(--accent);
+            font-weight: normal;
+        }
+
+        .highlight-backward {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+
+        .highlight-forward {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Interactive BPE Diagram */
+        .bpe-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .bpe-node {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .bpe-node:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .bpe-token {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .bpe-meaning {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .bpe-arrow {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-title">ICT3507C Portfolio</div>
+        <nav>
+            <a href="#introduction" class="nav-item">0. Rationale & Introduction</a>
+            <a href="#ovs-attention" class="nav-item">1. Attention & The OVS Challenge</a>
+            <a href="#bpe-agglutination" class="nav-item">2. BPE Tokenization</a>
+            <a href="#encoder-decoder" class="nav-item">3. Cross-Lingual Encoder-Decoder</a>
+            <a href="#fine-tuning" class="nav-item">4. Fine-Tuning & Evaluation</a>
+            <a href="#conclusion" class="nav-item">5. Conclusion</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1>Large-Language Models (LLM) Architecture: A Structural Proof via Klingon (tlhIngan Hol)</h1>
+        
+        <div class="abstract-card" id="introduction">
+            <strong>Project Rationale</strong>
+            To demonstrate equivalent competency in LLM architectures without exposing proprietary, enterprise-locked intellectual property, this portfolio showcases the absolute limits of foundational Transformer architectures on extreme edge-case tokenization and syntax. 
+            <br><br>
+            Specifically, it mathematically analyzes the capacity of <strong>Self-Attention mechanics</strong>, <strong>Positional Embeddings</strong>, and target Fine-Tuning pipelines to successfully parse, map, and generate text in the highly structured, low-resource constructed language of Klingon (tlhIngan Hol).
+        </div>
+
+        <h2 id="ovs-attention">1. Positional Embeddings & Self-Attention (The OVS Challenge)</h2>
+        <p>
+            Standard English operates on a Subject-Verb-Object (SVO) structural logic (e.g., "The warrior drinks the ale"). Foundational LLMs rely on massive sets of this SVO data to approximate relationships. 
+            However, Klingon operates on a strict, rigid <strong>Object-Verb-Subject (OVS)</strong> order:
+        </p>
+        
+        <pre>Hiq (Ale) tlhutlh (drinks) suvwI' (warrior)</pre>
+
+        <p>
+            This structure is the ultimate stress test for a Transformer architecture. In a legacy recurrent neural network (RNN), passing tokens sequentially forces the network to hold the object (`Hiq`) in a decaying hidden state until it reaches the actor (`suvwI'`). 
+            Transformers, however, process tokens in parallel, completely relying on <strong>Positional Embeddings</strong> and the <strong>Self-Attention Matrix ($Q \times K^T$)</strong> to resolve the syntax.
+        </p>
+
+        <div class="matrix-container">
+            <strong>Simulated Pre-Softmax Attention Weights ($Q \times K^T$)</strong>
+            <table class="matrix">
+                <thead>
+                    <tr>
+                        <th>Query \ Key</th>
+                        <th>Pos 0: Hiq (Obj)</th>
+                        <th>Pos 1: tlhutlh (Verb)</th>
+                        <th>Pos 2: suvwI' (Subj)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Hiq</strong></td>
+                        <td>1.00</td>
+                        <td>0.20</td>
+                        <td>0.10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>tlhutlh</strong></td>
+                        <td class="highlight-backward">0.80 (Backward)</td>
+                        <td>1.00</td>
+                        <td class="highlight-forward">0.90 (Forward)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>suvwI'</strong></td>
+                        <td>0.10</td>
+                        <td>0.30</td>
+                        <td>1.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            As visualized above, the verb (`tlhutlh`) is completely dependent on its neighbors to resolve semantic meaning. The Self-Attention mechanism must cast a massive <strong>backward weight</strong> to position 0 to determine *what* is being drunk, and a <strong>forward weight</strong> to position 2 to determine *who* is doing the drinking. If Positional Embeddings were removed, the geometric matrix would collapse, rendering the model incapable of distinguishing the actor from the target.
+        </p>
+
+        <h2 id="bpe-agglutination">2. Tokenization & Token Embeddings (Agglutination)</h2>
+        <p>
+            Klingon is an agglutinative language, meaning it glues specific prefixes and suffixes onto a root word to dynamically alter its grammatical function. 
+            This provides a textbook case for demonstrating the necessity of <strong>Byte-Pair Encoding (BPE)</strong> sub-word tokenization.
+        </p>
+
+        <p>Consider the root word <code>Qong</code> (sleep). By adding suffixes, we generate <code>QongDaqDaq</code> (in the bed).</p>
+
+        <div class="bpe-flow">
+            <div class="bpe-node">
+                <div class="bpe-token">Qong</div>
+                <div class="bpe-meaning">Action(Sleep)</div>
+            </div>
+            <div class="bpe-arrow">+</div>
+            <div class="bpe-node">
+                <div class="bpe-token">##Daq</div>
+                <div class="bpe-meaning">Modifier(Place)</div>
+            </div>
+            <div class="bpe-arrow">+</div>
+            <div class="bpe-node">
+                <div class="bpe-token">##Daq</div>
+                <div class="bpe-meaning">Modifier(At)</div>
+            </div>
+            <div class="bpe-arrow">=</div>
+            <div class="bpe-node" style="border-color: var(--accent);">
+                <div class="bpe-token">QongDaqDaq</div>
+                <div class="bpe-meaning">Location(In the bed)</div>
+            </div>
+        </div>
+
+        <p>
+            A naive word-level tokenizer would flag <code>QongDaqDaq</code> as a rare, unknown out-of-vocabulary (OOV) token. However, a properly trained BPE model fractures the agglutinated word into its semantic sub-components: <code>["Qong", "##Daq", "##Daq"]</code>.
+        </p>
+        <p>
+            In the high-dimensional latent embedding space ($\mathbb{R}^d$), the token vector for <code>##Daq</code> mathematically shifts the spatial geometric position of the root word <code>Qong</code> toward a spatial vector representation of a physical location. Agglutinative grammar is therefore executed as literal geometric vector translation.
+        </p>
+
+        <h2 id="encoder-decoder">3. Cross-Lingual Encoder-Decoder Models</h2>
+        <p>
+            When utilizing an Encoder-Decoder architecture (e.g., T5 or BART) to translate Klingon to English, the model must perform a massive structural inversion.
+        </p>
+        <ul>
+            <li><strong>The Encoder</strong> ingests the alien OVS syntax, applies self-attention layers, and compresses the structural logic into an abstract, language-agnostic hidden state (the semantic manifold).</li>
+            <li><strong>The Decoder</strong> takes this hidden state, applies <em>Cross-Attention</em> over the encoder's final layer, and auto-regressively unpacks it into a standard English SVO sequence.</li>
+        </ul>
+        <p>
+            Because the structural gap between the languages is so massive, it forces the latent space to capture the <em>pure concept</em> of the action, mathematically proving that the model is performing deep semantic alignment rather than relying on shallow word-to-word substitutions.
+        </p>
+
+        <h2 id="fine-tuning">4. Fine-Tuning & Evaluation Metrics</h2>
+        <p>
+            To deploy a Klingon-capable LLM, a foundational model (like LLaMA-3) requires Low-Rank Adaptation (LoRA) fine-tuning on a specialized, low-resource dataset (e.g., <em>The Klingon Dictionary</em>). 
+            During this parameter-efficient fine-tuning (PEFT), the Cross-Entropy Loss evaluates how well the model's output probability distribution matches the extreme OVS structures.
+        </p>
+        <pre># Cross-Entropy Loss calculation for next-token prediction
+Loss = - Σ (y_true * log(y_pred))
+
+# Given input "Hiq tlhutlh", the model MUST assign high probability 
+# to a Subject token (suvwI') rather than an Object token, 
+# minimizing the loss gradient.</pre>
+
+        <h2 id="conclusion">5. Conclusion</h2>
+        <p>
+            As demonstrated through the syntactic extremity of Klingon, modern Large-Language Models do not strictly "understand" language. Instead, they map mathematical relationships through distributional semantics. 
+            By modeling the geometry of tokens across attention heads, the Transformer architecture proves capable of resolving even the most alien syntactic structures seamlessly.
+        </p>
+
+        <div class="footer">
+            ICT3507C Large-Language Models (LLM) Architecture | Project Portfolio | Gwendalynn Lim
+        </div>
+    </main>
+
+    <script>
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('.nav-item').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
