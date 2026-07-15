@@ -49,7 +49,7 @@ Status: Production Baseline / Feature Freeze (Patent Protection Safe Variant)
 
 #### **Cryptographic Verification**
 
-To establish the absolute integrity, chronological positioning, and distinct authorship of this research before submission to the Nanyang Technological University / Singapore Institute of Technology academic frameworks, the canonical distribution of the compiled portfolio has been hashed.
+To establish the absolute integrity, chronological positioning, and distinct authorship of this research before submission to the Singapore Institute of Technology academic frameworks, the canonical distribution of the compiled portfolio has been hashed.
 
 * **Canonical URL:** `https://evecount.github.io/klingon_LLM/paper.html`
 * **Provenance Token (SHA-256):** `9f8ba521c7e63b4827d58f36894b1509a22bbde8064a78103323a67d98b1b241`
