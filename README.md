@@ -1,5 +1,11 @@
 # Klingon LLM Architecture Proof (ICT3507C)
 
+**Module:** ICT3507C Large-Language Models (LLM) Architecture  
+**Author:** Gwendalynn Lim (Lim Wan Ting Gwendalynn)  
+**Institution:** Singapore Institute of Technology (SIT)  
+**Email:** gwendalynn.lim@sit.singaporetech.edu.sg  
+
+---
 This repository serves as a verifiable portfolio demonstrating proficiency in Large Language Models (LLMs), including transformer architectures, encoder-decoder models, attention mechanisms, and positional embeddings.
 
 Instead of a generic text classifier, this project probes the structural limits of foundational Transformer models by applying them to the extreme edge-case syntax of **Klingon (tlhIngan Hol)**. 
