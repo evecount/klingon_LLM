@@ -1,4 +1,4 @@
-# Klingon LLM Architecture Proof (ICT3507C)
+# The Klingon Topology: Zero-Knowledge LLM Architecture (ICT3507C)
 
 **Module:** ICT3507C Large-Language Models (LLM) Architecture  
 **Author:** Gwendalynn Lim (Lim Wan Ting Gwendalynn)  
