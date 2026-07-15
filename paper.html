@@ -592,6 +592,9 @@
         <p>
             If an adversary intercepts the obfuscated data and attempts to train an unauthorized LLM to figure out what language is being used by the obfuscator, the foreign model's learning rate and perplexity signature will instantly mismatch the expected authorized curve. Because the adversary's LLM lacks the exact geometric priors, cybersecurity monitors will know right away that an unauthorized model is touching the dataset.
         </p>
+        <p>
+            This mismatch is mathematically equivalent to a foreign spy operating in a new country. Even if the spy knows the raw vocabulary, they lack the subtle cultural context—like which direction to hold a bouquet of flowers or how to react to a local idiom—instantly giving themselves away. Similarly, the mere attempt by an unauthorized, unfamiliar LLM to begin the early stages of pattern recognition on the obfuscated dataset produces an anomalous learning signature that immediately raises an intrusion alert.
+        </p>
 
         <div style="text-align: center; margin: 2.5rem 0;">
             <img src="assets/red_team_comic.png" alt="Red Team Convergence Comic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 0 20px rgba(184, 41, 234, 0.4); border: 1px solid var(--accent-purple);">
