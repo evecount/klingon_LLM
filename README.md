@@ -2,7 +2,7 @@
 
 **Module:** ICT3507C Large-Language Models (LLM) Architecture  
 **Author:** Gwendalynn Lim (Lim Wan Ting Gwendalynn)  
-**Co-Authors:** Antigravity (Agentic AI) & Gemini 3.1 Pro  
+**AI Tools Utilized:** Antigravity (Agentic AI) & Gemini 3.1 Pro  
 **Institution:** Singapore Institute of Technology (SIT)  
 **Email:** gwendalynn.lim@sit.singaporetech.edu.sg  
 
@@ -37,12 +37,12 @@ python klingon_transformer.py
 
 ## Project Provenance & Attribution
 
-This project is co-developed by **Gwendalynn Lim Wan Ting**, **Antigravity** (Agentic AI), and **Gemini 3.1 Pro**. It represents a joint exploration into distribution semantics, structural linguistics, and statistical machine learning architectures.
+This project is developed by **Gwendalynn Lim Wan Ting**, utilizing **Antigravity** (Agentic AI) and **Gemini 3.1 Pro** to assist in exploration, coding, and documentation generation. It represents an exploration into distribution semantics, structural linguistics, and statistical machine learning architectures.
 
 ```yaml
 Project: Klingon LLM Architecture Case Study (ICT3507C Submission)
 Lead Researcher: Gwendalynn Lim Wan Ting
-AI Collaborators: Antigravity & Gemini 3.1 Pro (Architecture, Coding, & Documentation)
+AI Assistants: Antigravity & Gemini 3.1 Pro (Architecture, Coding, & Documentation)
 Timestamp: 2026-07-15 17:12:00 UTC+8
 Status: Production Baseline / Feature Freeze (Patent Protection Safe Variant)
 ```
