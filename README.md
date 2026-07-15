@@ -6,6 +6,8 @@
 **Email:** gwendalynn.lim@sit.singaporetech.edu.sg  
 
 ---
+![Aliens training an LLM](assets/alien_comic.png)
+
 This repository serves as a verifiable portfolio demonstrating proficiency in Large Language Models (LLMs), including transformer architectures, encoder-decoder models, attention mechanisms, and positional embeddings.
 
 Instead of a generic text classifier, this project probes the structural limits of foundational Transformer models by applying them to the extreme edge-case syntax of **Klingon (tlhIngan Hol)**. 

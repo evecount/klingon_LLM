@@ -268,9 +268,37 @@
             text-shadow: var(--purple-glow);
         }
 
+        /* Retro Audio Button */
+        .audio-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(184, 41, 234, 0.1);
+            border: 1px solid var(--accent-purple);
+            color: var(--accent-cyan);
+            font-family: var(--font-mono);
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: var(--purple-glow);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .audio-btn:hover {
+            background: rgba(69, 243, 255, 0.2);
+            border-color: var(--accent-cyan);
+            box-shadow: var(--accent-glow);
+        }
+
     </style>
 </head>
 <body>
+
+    <audio id="bgm" loop>
+        <source src="assets/galaga_theme.wav" type="audio/wav">
+    </audio>
+    <button class="audio-btn" onclick="toggleAudio()">🎵 Play Retro Theme</button>
 
     <aside class="sidebar">
         <div class="sidebar-title">ICT3507C Portfolio</div>
@@ -292,6 +320,11 @@
             To demonstrate equivalent competency in LLM architectures without exposing proprietary, enterprise-locked intellectual property, this portfolio showcases the absolute limits of foundational Transformer architectures on extreme edge-case tokenization and syntax. 
             <br><br>
             Specifically, it mathematically analyzes the capacity of <strong>Self-Attention mechanics</strong>, <strong>Positional Embeddings</strong>, and target Fine-Tuning pipelines to successfully parse, map, and generate text in the highly structured, low-resource constructed language of Klingon (tlhIngan Hol).
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <img src="assets/alien_comic.png" alt="Aliens getting frustrated training their own Large Language Model" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--purple-glow);">
+            <p style="color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-mono); margin-top: 1rem;">Figure 1: Even aliens struggle with model convergence.</p>
         </div>
 
         <h2 id="distributional">1. Distributional Semantics: Knowing a Word by its Company</h2>
@@ -466,6 +499,22 @@ Loss = - Σ (y_true * log(y_pred))
                 });
             });
         });
+
+        // Audio toggle
+        const bgm = document.getElementById('bgm');
+        const audioBtn = document.querySelector('.audio-btn');
+        let isPlaying = false;
+
+        function toggleAudio() {
+            if (isPlaying) {
+                bgm.pause();
+                audioBtn.innerHTML = "🎵 Play Retro Theme";
+            } else {
+                bgm.play();
+                audioBtn.innerHTML = "🔇 Stop Music";
+            }
+            isPlaying = !isPlaying;
+        }
     </script>
 </body>
 </html>
