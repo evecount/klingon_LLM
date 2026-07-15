@@ -384,6 +384,15 @@
             Meaning emerges not from a predefined dictionary, but from the geographic clustering of tokens in high-dimensional space.
         </p>
 
+        <div class="abstract-card" style="border-left-color: var(--accent-cyan); background: rgba(69, 243, 255, 0.05);">
+            <strong style="color: var(--accent-cyan);">Thought Experiment: "Bird" vs "Rocket"</strong>
+            <p style="margin-bottom: 0;">
+                Suppose the LLM encounters two entirely unknown Klingon tokens that both translate loosely to "flying object": <code>boqrat</code> (Bird) and <code>Duj</code> (Spaceship). The LLM does not need to know what "feathers" or "metal" are. 
+                <br><br>
+                It simply maps that <code>boqrat</code> consistently co-occurs near tokens for <em>[Tree, Animal, Sky, Eat]</em>, while <code>Duj</code> co-occurs near <em>[Space, Fire, Metal, Destroy]</em>. The geometry of the neural network mathematically separates a biological flying object from a mechanical one completely independently of the words used to describe them.
+            </p>
+        </div>
+
         <h2 id="ovs-attention">2. Positional Embeddings & Self-Attention (The OVS Challenge)</h2>
         <p>
             Standard English operates on a Subject-Verb-Object (SVO) structural logic (e.g., "The warrior drinks the ale"). Foundational LLMs rely on massive sets of this SVO data to approximate relationships. 

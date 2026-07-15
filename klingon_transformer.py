@@ -123,6 +123,18 @@ def run_distributional_semantics_simulation():
     print(f"embedding vector is mathematically pulled close to weapons and combat terms,")
     print("and pushed far from terms like 'Bed' (0.05), the model successfully infers")
     print("the semantic meaning of the token purely from relational geometry.")
+    
+    print("\n------------------------------------------------------------")
+    print("  THOUGHT EXPERIMENT: 'Bird' vs 'Rocket'")
+    print("------------------------------------------------------------")
+    print("Suppose the LLM encounters two unknown Klingon tokens for 'flying objects':")
+    print("Token A: 'boqrat' (Bird)")
+    print("Token B: 'Duj' (Spaceship)")
+    print("\nThe model maps their geometric meaning based on their co-occurring neighbors:")
+    print("  'boqrat' (Bird) co-occurs with -> [Tree, Animal, Sky, Eat]")
+    print("  'Duj' (Ship)    co-occurs with -> [Space, Fire, Metal, Destroy]")
+    print("\nEven without a Klingon dictionary, the LLM mathematically separates a biological")
+    print("flying object from a mechanical flying object purely through their geographic distances.")
 
 if __name__ == "__main__":
     print("\n============================================================")
