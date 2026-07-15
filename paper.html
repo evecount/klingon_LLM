@@ -322,7 +322,7 @@
             <a href="#distributional" class="nav-item">1. Distributional Semantics</a>
             <a href="#ovs-attention" class="nav-item">2. Attention & The OVS Challenge</a>
             <a href="#bpe-agglutination" class="nav-item">3. BPE Tokenization</a>
-            <a href="#encoder-decoder" class="nav-item">4. Cross-Lingual Decoder</a>
+            <a href="#encoder-decoder" class="nav-item">4. Obscured Training (Classified Data)</a>
             <a href="#fine-tuning" class="nav-item">5. Fine-Tuning Metrics</a>
         </nav>
     </aside>
@@ -494,14 +494,21 @@
             In the high-dimensional latent embedding space ($\mathbb{R}^d$), the token vector for <code>##Daq</code> mathematically shifts the spatial geometric position of the root word <code>Qong</code> toward a spatial vector representation of a physical location.
         </p>
 
-        <h2 id="encoder-decoder">4. Cross-Lingual Encoder-Decoder Models</h2>
+        <h2 id="encoder-decoder">4. Obscured Training: A Rose by Any Other Name</h2>
         <p>
-            When utilizing an Encoder-Decoder architecture (e.g., T5 or BART) to translate Klingon to English, the model must perform a massive structural inversion.
+            Rather than using Encoder-Decoder models merely to translate Klingon back to standard English, we can apply this geometric logic to a much more fascinating use case: training models on highly classified or protected datasets. As Juliet famously said, <em>"A rose by any other name would smell as sweet."</em>
         </p>
-        <ul>
-            <li><strong>The Encoder</strong> ingests the alien OVS syntax, applies self-attention layers, and compresses the structural logic into an abstract, language-agnostic hidden state (the semantic manifold).</li>
-            <li><strong>The Decoder</strong> takes this hidden state, applies <em>Cross-Attention</em> over the encoder's final layer, and auto-regressively unpacks it into a standard English SVO sequence.</li>
+        <p>
+            In LLM architecture, <strong>meaning is entirely decoupled from the string of characters</strong>. If data scientists need to train a model on classified intelligence or HIPAA-protected medical records, they can completely obfuscate the dataset—swapping real-world nouns and verbs for Klingon tokens, cryptographic hashes, or random strings.
+        </p>
+        <ul style="padding-left: 1.5rem; margin-top: 1rem; margin-bottom: 1.5rem;">
+            <li style="margin-bottom: 0.8rem;">Because the LLM relies solely on the topological map of the data (Distributional Semantics), it will perfectly learn the logic, behavior, and relationships of the classified data.</li>
+            <li>The model will converge and optimize its loss function successfully, all while the human engineers overseeing the training run have absolutely no idea what the underlying data actually means.</li>
         </ul>
+        <div class="abstract-card" style="border-left-color: var(--accent-purple); background: rgba(184, 41, 234, 0.05); margin-top: 0;">
+            <strong style="color: var(--accent-purple);">Zero-Knowledge Topology</strong>
+            Why convert obscure syntax into standard English when the obscurity itself acts as a perfect zero-knowledge cryptographic training layer? The geometry remains perfectly intact, proving that LLM cognition is entirely structural.
+        </div>
 
         <h2 id="fine-tuning">5. Fine-Tuning & Evaluation Metrics</h2>
         <p>
