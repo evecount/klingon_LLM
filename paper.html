@@ -307,6 +307,20 @@
         }
 
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true, 
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#0f1224',
+                primaryTextColor: '#45F3FF',
+                primaryBorderColor: 'rgba(69, 243, 255, 0.4)',
+                lineColor: '#B829EA',
+                tertiaryColor: '#000000'
+            }
+        });
+    </script>
 </head>
 <body>
 
@@ -497,10 +511,36 @@
         <h2 id="encoder-decoder">4. Obscured Training: A Rose by Any Other Name</h2>
         <p>
             Rather than using Encoder-Decoder models merely to translate Klingon back to standard English, we can apply this geometric logic to a much more fascinating use case: training models on highly classified or protected datasets. As Juliet famously said, <em>"A rose by any other name would smell as sweet."</em>
+            <br><span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.9em; display: block; margin-top: 0.5rem;">(Klingon Translation: <em>"pong pIm ghajchugh roS, 'ey nIteb."</em>)</span>
         </p>
         <p>
             In LLM architecture, <strong>meaning is entirely decoupled from the string of characters</strong>. If data scientists need to train a model on classified intelligence or HIPAA-protected medical records, they can completely obfuscate the dataset—swapping real-world nouns and verbs for Klingon tokens, cryptographic hashes, or random strings.
         </p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 2.5rem 0;">
+            <div style="flex: 1; min-width: 300px; background: var(--surface); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 0 15px rgba(69, 243, 255, 0.1);">
+                <h4 style="text-align: center; color: var(--accent-cyan); margin-top: 0; font-family: var(--font-mono);">Standard Topology</h4>
+                <div class="mermaid" style="text-align: center;">
+                    graph TD
+                    A[Rose] -->|Has| B[Name]
+                    A -->|Smells| C[Sweet]
+                    B -->|Any Other| D[Different]
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: var(--surface); padding: 1.5rem; border: 1px solid rgba(184, 41, 234, 0.3); border-radius: 8px; box-shadow: 0 0 15px rgba(184, 41, 234, 0.1);">
+                <h4 style="text-align: center; color: var(--accent-purple); margin-top: 0; font-family: var(--font-mono);">Obscured Topology</h4>
+                <div class="mermaid" style="text-align: center;">
+                    graph TD
+                    A[roS] -->|ghajchugh| B[pong]
+                    A -->|nIteb| C['ey]
+                    B -->|pIm| D[Different]
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 0.9em; color: var(--text-muted); font-style: italic; margin-bottom: 2.5rem;">
+            Notice how the relational geometry remains completely identical. The LLM optimizes for the graph's structural topology, completely blind to the actual vocabulary used in the nodes.
+        </p>
+
         <ul style="padding-left: 1.5rem; margin-top: 1rem; margin-bottom: 1.5rem;">
             <li style="margin-bottom: 0.8rem;">Because the LLM relies solely on the topological map of the data (Distributional Semantics), it will perfectly learn the logic, behavior, and relationships of the classified data.</li>
             <li>The model will converge and optimize its loss function successfully, all while the human engineers overseeing the training run have absolutely no idea what the underlying data actually means.</li>
