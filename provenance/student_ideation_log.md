@@ -21,3 +21,7 @@ This document serves as a provenance record of the student's direct conceptual i
 ## 4. Red Teaming and Convergence Velocity
 *On applying the topological logic as an anomaly detection tool for security researchers:*
 > "ok past #5 we then go onto the fact that the speed of which the LLM can understand random unstructured data therefore can also affect how learning rate might be an indicator of a red team test."
+
+## 5. Intrusion Detection via Perplexity Signatures
+*On using Topological Perplexity to instantly identify unauthorized models attempting to reverse-engineer obfuscated data:*
+> "I agree with the anomaly detection but also it's very easy to spot a team who is trying to figure out what language is being used by the obfuscator... because the learning rate to match for the topological perplexity should be = 1, as with the rose as a rose shows 1 if the exact authorized LLM tuned to the authorized party is used. Use the wrong LLM and we will know right away."
