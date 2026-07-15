@@ -2,6 +2,7 @@
 
 **Module:** ICT3507C Large-Language Models (LLM) Architecture  
 **Author:** Gwendalynn Lim (Lim Wan Ting Gwendalynn)  
+**Co-Authors:** Antigravity (Agentic AI) & Gemini 1.5 Pro  
 **Institution:** Singapore Institute of Technology (SIT)  
 **Email:** gwendalynn.lim@sit.singaporetech.edu.sg  
 
