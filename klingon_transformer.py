@@ -115,7 +115,7 @@ def run_distributional_semantics_simulation():
     
     for word, sim in sorted_co:
         # Create a simple visual bar for the terminal
-        bar = "█" * int(sim * 20)
+        bar = "#" * int(sim * 20)
         print(f"  {word:<20} | {sim:>4.2f} | {bar}")
         
     print("\nAnalysis:")
