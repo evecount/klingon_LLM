@@ -12,6 +12,12 @@ This repository serves as a verifiable portfolio demonstrating proficiency in La
 
 **Crucially, Klingon is not utilized here for novelty.** Rather, its highly rigid Object-Verb-Subject (OVS) syntax and extreme agglutinative grammar provide a perfect programmatic test-bed to prove the core thesis of LLM learning: *Distributional Semantics*. This project demonstrates that LLMs do not inherently understand "meaning" via dictionaries, but rather map semantic relationships through high-dimensional geometric context. 
 
+## Programmatic Defense: The Klingon Distributional Case Study
+
+- **De-biasing Semantic Pre-training:** Standard English portfolios often hide architecture flaws because models rely on pre-trained semantic shortcuts. By shifting the objective function to a linguistically isolated, low-resource space like Klingon (tlhIngan Hol), we force the evaluator to focus entirely on pure architectural dynamics—how positional embeddings handle strict OVS (Object-Verb-Subject) syntax and how self-attention weights update without domestic semantic priors.
+- **Tokenization & Agglutinative Geometry:** Klingon relies on complex prefix/suffix compounding (agglutination). This allows you to showcase how modern subword tokenizers (like Byte-Pair Encoding) break down morphological units mathematically, demonstrating how the cross-entropy loss function optimizes structural prediction independent of human cultural intent.
+- **Relationship Over Vocabulary:** This project directly proves that LLM learning is fundamentally an optimization task over topological data relationships rather than static dictionary lookups. The network learns the multi-dimensional distance between syntactic structures entirely through positional mechanics and contextual matrices.
+
 ## Files Included
 
 1. `paper.html`: The core thesis document. **[View the live Interactive Paper here!](https://evecount.github.io/klingon_LLM/paper.html)** Open this in any modern web browser to view the interactive breakdown of how Transformers handle Klingon's Object-Verb-Subject (OVS) syntax and extreme agglutination.
