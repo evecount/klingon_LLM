@@ -268,6 +268,21 @@
             text-shadow: var(--purple-glow);
         }
 
+        /* Twinkling Stars */
+        .star {
+            position: fixed;
+            background: #ffffff;
+            border-radius: 50%;
+            z-index: -1;
+            animation: twinkle var(--duration) infinite ease-in-out alternate;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.1; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 8px #ffffff; }
+        }
+
         /* Retro Audio Button */
         .audio-btn {
             position: fixed;
@@ -532,6 +547,23 @@ Loss = - Σ (y_true * log(y_pred))
                 audioBtn.innerHTML = "🔇 Stop Music";
             }
             isPlaying = !isPlaying;
+        }
+
+        // Generate Twinkling Stars
+        const numStars = 150;
+        for (let i = 0; i < numStars; i++) {
+            let star = document.createElement('div');
+            star.className = 'star';
+            let size = Math.random() * 2 + 1; // 1px to 3px
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.setProperty('--duration', (Math.random() * 3 + 1.5) + 's'); // 1.5s to 4.5s
+            star.style.animationDelay = (Math.random() * 4) + 's';
+            // Slight color variation for depth (white to light cyan)
+            if(Math.random() > 0.8) { star.style.background = '#45F3FF'; }
+            document.body.appendChild(star);
         }
     </script>
 </body>
