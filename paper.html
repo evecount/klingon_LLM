@@ -337,7 +337,7 @@
             <a href="#ovs-attention" class="nav-item">2. Attention & The OVS Challenge</a>
             <a href="#bpe-agglutination" class="nav-item">3. BPE Tokenization</a>
             <a href="#encoder-decoder" class="nav-item">4. Obscured Training (Classified Data)</a>
-            <a href="#fine-tuning" class="nav-item">5. Fine-Tuning Metrics</a>
+            <a href="#fine-tuning" class="nav-item">5. Secure Fine-Tuning</a>
         </nav>
     </aside>
 
@@ -550,17 +550,26 @@
             Why convert obscure syntax into standard English when the obscurity itself acts as a perfect zero-knowledge cryptographic training layer? The geometry remains perfectly intact, proving that LLM cognition is entirely structural.
         </div>
 
-        <h2 id="fine-tuning">5. Fine-Tuning & Evaluation Metrics</h2>
+        <h2 id="fine-tuning">5. Secure Fine-Tuning & Evaluation on Sensitive Data</h2>
         <p>
-            To deploy a Klingon-capable LLM, a foundational model (like LLaMA-3) requires Low-Rank Adaptation (LoRA) fine-tuning on a specialized, low-resource dataset. 
-            During this parameter-efficient fine-tuning (PEFT), the Cross-Entropy Loss evaluates how well the model's output probability distribution matches the extreme OVS structures.
+            The implications of zero-knowledge topology completely transform how we approach fine-tuning. By utilizing the vocabulary swapping mechanics (e.g., mapping English classified terms to Klingon tokens or encrypted hashes), the obfuscation process itself acts as an advanced form of categorization and semantic chunking.
         </p>
-        <pre># Cross-Entropy Loss calculation for next-token prediction
-Loss = - Σ (y_true * log(y_pred))
+        
+        <div class="abstract-card" style="border-left-color: var(--accent-cyan); background: rgba(69, 243, 255, 0.05);">
+            <strong style="color: var(--accent-cyan); font-family: var(--font-mono);">The Obscured Training Algorithm</strong>
+            <ol style="margin-top: 0.8rem; margin-bottom: 0; padding-left: 1.5rem; line-height: 1.6;">
+                <li><strong>Ingestion & Swapping:</strong> Raw sensitive data is ingested. Critical entities and contexts are mapped via a secure dictionary to an isolated alien vocabulary (e.g., <code>[Operation_Overlord]</code> &rarr; <code>[may'Daq_1]</code>).</li>
+                <li><strong>Topological Fine-Tuning:</strong> The LLM is fine-tuned on the obfuscated dataset. It optimizes its Cross-Entropy Loss to predict the geometric relationship between the obfuscated tokens without ever being exposed to the raw domestic text.</li>
+                <li><strong>Secure Inference:</strong> The trained model generates obfuscated structural predictions, which are passed back through the secure dictionary environment to be de-obfuscated exclusively for authorized human readers.</li>
+            </ol>
+        </div>
 
-# Given input "Hiq tlhutlh", the model MUST assign high probability 
-# to a Subject token (suvwI') rather than an Object token, 
-# minimizing the loss gradient.</pre>
+        <p>
+            In this paradigm, standard evaluation metrics like BLEU or ROUGE become irrelevant. They are replaced by <strong>Topological Perplexity</strong>. If the loss converges during training, it proves the model has successfully learned the data's relational space.
+        </p>
+        <p style="font-size: 1.1rem; border-top: 1px solid var(--border-color); padding-top: 2rem; margin-top: 2rem;">
+            <strong>The Ultimate Conclusion:</strong> By relying on structural geometry rather than raw vocabulary, the resulting LLM is highly secure by default. Even if the model's weights are fully extracted or leaked to an adversary, the matrices contain absolutely no sensitive strings—only the abstract, alien geometry of the relationships. The Klingon test-case proves that the architecture of intelligence is defined by its connections, not its language.
+        </p>
 
         <div class="footer">
             <strong>ICT3507C Large-Language Models (LLM) Architecture</strong><br>
