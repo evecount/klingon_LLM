@@ -12,7 +12,7 @@ Instead of a generic text classifier, this project probes the structural limits 
 
 ## Files Included
 
-1. `paper.html`: The core thesis document. Open this in any modern web browser to view the interactive breakdown of how Transformers handle Klingon's Object-Verb-Subject (OVS) syntax and extreme agglutination.
+1. `paper.html`: The core thesis document. **[View the live Interactive Paper here!](https://evecount.github.io/klingon_LLM/paper.html)** Open this in any modern web browser to view the interactive breakdown of how Transformers handle Klingon's Object-Verb-Subject (OVS) syntax and extreme agglutination.
 2. `klingon_transformer.py`: A toy Python script implementing the mathematical proofs discussed in the paper. It simulates Byte-Pair Encoding (BPE) sub-word tokenization and $Q \times K^T$ Self-Attention matrices resolving OVS structural dependencies.
 
 ## How to run the Simulation
